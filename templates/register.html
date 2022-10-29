@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %} <!--pythonda nasıl import ediyorsak burda da o dizindeki html dosyasını import ediyoruz yani aslında oradaki flask yapısındaki bir python fonksiyonunu bu html sayfasına bazı işlemler için çekmiş oluyoruz-->
+<h3>Kayıt Olun</h3>
+<hr>
+<form method = "post">
+    {{ render_field(form.name, class = "form-control") }}      
+    {{ render_field(form.username, class = "form-control") }}    <!--class attrıbuteuna verdiğimiz "form-control" değeri ise daha güzel bir görüntü (uzayan bir alan) elde etmemizi sağlıyor(bu attribute o macroya(fonksiyona) gider)-->   
+    {{ render_field(form.email, class = "form-control") }}
+    {{ render_field(form.password, class = "form-control") }}
+    {{ render_field(form.confirm, class = "form-control") }}
+    <button type="submit" class="btn btn-warning">Kayıt Ol</button> <!--type'ı submit yaptık çünkü butona bsaılınca post request olsun istiyoruz -->
+</form>
+{% endblock body %}

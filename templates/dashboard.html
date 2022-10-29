@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<samll>Hoşgeldin {{session["username"]}}</small> <!--Gördüğünüz gibi sessionu return ile response ile döndrümemize gerek kalmadan hesabı bize iletir yani aslında değişmez ve ulaşılması kolay şeyler için bu dict i kullanabiliriz-->
+    <hr>
+
+{% if articles %}
+<table class="table table-bordered"> <!--makaleleri kontrol panelinde göstermek için tablo oluşturuyoruz-->
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Makale Başlığı</th>
+        <th scope="col">Makale Yazarı</th>
+        <th scope="col">Makale İçeriği</th>
+        <th scope="col">Tarih</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for article in articles %}
+        <th scope="row">{{article.Id}}</th>
+        <td><a href = "/article/{{article.Id}}">{{article.title}}</td>
+        <td>{{article.author}}</td>
+        <td>{{article.created_date}}</td>
+        <td><a class = "btn btn-danger" href = "/edit/{{article.Id}}">Güncelle<a></td> <!--python kodumuzu string içerisinde kullanabiliyoruz böylece-->
+        <td><a class = "btn btn-danger" href = "/delete/{{article.Id}}">Sil<a></td>
+        </tr>
+            {% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+<div class = "alert alert-danger">Henüz Makaleniz Bulunmuyor.</div>
+{% endif %}
+<a href="/addarticle" class = "btn btn-danger">Makale Ekle</a>
+{% endblock body %}
+
+
+
+
