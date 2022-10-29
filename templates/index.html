@@ -1,31 +1,19 @@
 {% extends 'layout.html' %}
 {% block body %}
 <div class ="jumbotron text-center">
-    <h3>Karalılığa hoşgeldiniz</h3>
-    <p>Bu blogta geliştiricileri olarak blog yazılarınızı paylaşabilirsniz ve insanlara yardımcı olabilirsiniz.</p>
+    <h3>Welcome to my website</h3>
+    <p>As developers of this blog you can share your blog posts and help people.</p>
 </div>
-{% if answer == "evet" %}
-<p>Cevabımız evetmiş...</p>         <!--if ve else bloğuna ait-->
-{% else %}
-<p>Cevabımız evet değilmiş...</p>       <!--else ve endif bloğuna ait,endif if koşul durumlarının bittiğini belirtir-->
-{% endif %}
-{% if islem == 1 %}
-<p>1. işlem</p>
-{% elif islem == 2 %}
-<p>2. işlem</p>
-{% else %}
-<p>Geçersiz işlem.</p>
-{% endif %}
 
 <ul>
-    {% for number in numbers  %} <!--pythondaki gibi-->
+    {% for number in numbers  %}
     <li>
         {{number}}
     </li>
-    {% endfor %} <!--bloklar genellikle end bloğuna sahiptir ve bu blok ile ile kapanır-->
+    {% endfor %}
 </ul>
 <ul>
-    {% for article in articles  %} <!--pythondaki gibi sözlük üzerinde gezinme-->
+    {% for article in articles  %}
     
         <li>Article ID : {{article.id}} - Title : {{article.title}} Article Content : {{article.content}}</li>
     
