@@ -3,9 +3,9 @@
 
 {% block body %}
 
-<h3>Makaleler</h3>
+<h3>Articles</h3>
 <hr>
-{% if articles %} <!--articles var mı yok mu kontrolü-->
+{% if articles %} 
 <form action="/search" method = "post">
     <div class="card-body row no-gutters align-items-center">
         <div class="col-auto">
@@ -29,6 +29,6 @@
     {% endfor %}
 </ul>
 {% else %}
-<div class = "alert alert-danger">Bu blokta henüz makale bulunmuyor!</div> <!--flash mesajı kullanmadan alert mesajı bastık-->
+<div class = "alert alert-danger">There are no articles in this block yet!</div>
 {% endif %}
 {% endblock body %}
