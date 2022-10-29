@@ -1,0 +1,13 @@
+{% with messages = get_flashed_messages(with_categories=true) %} <!--öncesinde bir flash mesajı olup olmadığına bakar(with_categories=true ise flash mesajının bu parametresinin olduğunu mesajın kategorisinin olduğunu söyler) ana koddaki flash mesajı bu  -->
+<!--with pythondaki while a çok benzer-->
+  {% if messages %} <!--eğer flash mesajı varsa-->
+    <!--<ul class=flashes>>-->
+    {% for category, message in messages %} 
+      <!--<li class="{{ category }}">{{ message }}</li>(flashın paramtreleri olarak kategori ve mesaj alındı)--><!--Bu mesajın kateogrisiyle beraber kendisini yzmamızı sağlar-->
+      <div class="alert alert-{{category}}" role="alert"> <!--kategoriye göre mesaj belrilendiği için iki süslü parantez arasına yazılır-->
+      {{message}} <!--girilen ilk parametredeki mesaj yayınlanır-->
+      </div>
+    {% endfor %}
+    <!--</ul>-->
+  {% endif %}
+{% endwith %}
