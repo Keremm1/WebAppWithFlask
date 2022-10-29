@@ -12,7 +12,7 @@
     {% include "includes/navbar.html" %}
     <br><br><br>
     <div class = "container">
-        {% include "includes/messages.html" %} <!--Flash messagelerin her yerde görünmesini sağlamak için layout.html altına bu html dosyasını dahil edioruz(yani tüm kodlar buraya geçer) ve farkettiyseniz messages.html dosyasında herhangi bir mesajımız olduğunda görüntüleyecektir olgusu önemli -->
+        {% include "includes/messages.html" %} 
         {% block body %}
         {% endblock body %}
     </div>
@@ -26,9 +26,8 @@
     <script>
         CKEDITOR.replace( 'content',{
             allowedContent : true
-        }); //Ck editör allowedcontent özelliği ile ckeditor un eklediğimiz kodda sorun yaratmamasını sağladık
-        //<pre class="prettyprint"></pre> arasına kodumuzu yazarak renklendrime sağlayabiliriz kaynak: https://github.com/googlearchive/code-prettify
+        }); 
+        //<pre class="prettyprint"></pre> source: https://github.com/googlearchive/code-prettify
 </script>
-    <!--CK EDİTORÜ bootstrap sayesinde ekledik ;Bu editör resi eklediğimizde farklı bir şe yaptığımızda html olarak döndürür o htmli flask jinaj'dan gelen bir özellik olan "{article.content|self}" özellği ile html i görüntüleyebiliriz veritabanına kaydedebiliriz.{} parantez ile string içine direkt olarak aktarma yapılabilir.-->
 </body>
 </html>
