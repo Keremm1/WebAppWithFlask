@@ -3,13 +3,13 @@
 {% if article %}
 <h4>{{article.title}}</h4>
 <hr>
-Yazar : {{article.author}}
+Author : {{article.author}}
 <hr>
-Tarih : {{article.created_date}}
+Date : {{article.created_date}}
 <hr>
-{{article.content|safe}} <!--Burada flask jinaj'dan gelen bir özellik ile safe filter name'si (flaskta böyle bahsediliyor) ile html olarak gelen dosyayı html kodu olarak göndererek görüntülenmesini sağlayabiliriz-->
+{{article.content|safe}} 
 {% else %}
-<div class = "alert alert-warning">Böyle Bir Makale Bulunmuyor...</div>
+<div class = "alert alert-warning">There is no such article...</div>
 {% endif %}
 
 {% endblock  %}
